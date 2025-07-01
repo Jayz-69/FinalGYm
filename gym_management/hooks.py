@@ -242,3 +242,9 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+doc_events = {
+    "Gym Membership": {
+        "after_submit": "gym_management.gym_management.doctype.gym_membership.gym_membership.GymMembership.after_submit"
+    }
+}
