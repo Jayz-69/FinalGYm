@@ -1,19 +1,20 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:member",
  "creation": "2025-06-30 14:37:41.944587",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_p5yw",
-  "amended_from",
   "member",
   "plan_type",
   "start_date",
   "end_date",
   "status",
   "locker",
-  "final_price"
+  "final_price",
+  "locker_description"
  ],
  "fields": [
   {
@@ -21,20 +22,11 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "member",
    "fieldtype": "Link",
    "label": "Member",
-   "options": "Gym Member"
+   "options": "Gym Member",
+   "unique": 1
   },
   {
    "fieldname": "plan_type",
@@ -62,23 +54,29 @@
    "fieldname": "locker",
    "fieldtype": "Select",
    "label": "Locker",
-   "options": "Yes\nNo"
+   "options": "0\n1\n2"
   },
   {
    "fieldname": "final_price",
    "fieldtype": "Float",
    "label": "Final Price",
    "read_only": 1
+  },
+  {
+   "fieldname": "locker_description",
+   "fieldtype": "Data",
+   "label": "Locker Description",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-06-30 18:13:07.474195",
+ "modified": "2025-07-02 15:06:47.597948",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Membership",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -91,7 +89,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
@@ -103,7 +100,6 @@
    "report": 1,
    "role": "Gym Admin",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {

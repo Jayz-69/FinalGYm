@@ -59,9 +59,8 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-06-30 17:27:52.517750",
+ "modified": "2025-07-01 18:25:25.390458",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Trainer Subscription",
@@ -77,7 +76,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
@@ -91,7 +89,6 @@
    "role": "Gym Admin",
    "select": 1,
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {

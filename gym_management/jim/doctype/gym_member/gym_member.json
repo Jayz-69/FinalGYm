@@ -14,10 +14,7 @@
   "address",
   "allocated_trainer",
   "active_membership",
-  "current_weight",
-  "current_height",
-  "daily_calorie_intake",
-  "bmi"
+  "metrics_update"
  ],
  "fields": [
   {
@@ -62,39 +59,23 @@
    "options": "Gym Trainer"
   },
   {
-   "description": "In KG",
-   "fieldname": "current_weight",
-   "fieldtype": "Float",
-   "label": "Current Weight"
-  },
-  {
-   "fieldname": "daily_calorie_intake",
-   "fieldtype": "Float",
-   "label": "Daily Calorie Intake"
-  },
-  {
-   "description": "In meters",
-   "fieldname": "current_height",
-   "fieldtype": "Float",
-   "label": "Current Height"
-  },
-  {
-   "fieldname": "bmi",
-   "fieldtype": "Float",
-   "label": "BMI"
-  },
-  {
    "fieldname": "active_membership",
    "fieldtype": "Link",
    "label": "Active Membership",
    "options": "Gym Membership",
    "read_only": 1
+  },
+  {
+   "fieldname": "metrics_update",
+   "fieldtype": "Table",
+   "label": "Metrics Update",
+   "options": "Metrics Update"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-01 11:14:09.899823",
+ "modified": "2025-07-02 12:04:44.496018",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Member",

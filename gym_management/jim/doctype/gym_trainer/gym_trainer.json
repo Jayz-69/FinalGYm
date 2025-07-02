@@ -8,8 +8,7 @@
   "full_name",
   "email",
   "phone",
-  "specialization",
-  "average_rating"
+  "trainer_specialization"
  ],
  "fields": [
   {
@@ -30,21 +29,16 @@
    "options": "Phone"
   },
   {
-   "fieldname": "specialization",
-   "fieldtype": "Table",
-   "label": "Specialization",
-   "options": "Gym Trainer Specialization"
-  },
-  {
-   "fieldname": "average_rating",
-   "fieldtype": "Float",
-   "label": "Rating"
+   "fieldname": "trainer_specialization",
+   "fieldtype": "Link",
+   "label": "Trainer Specialization",
+   "options": "Specializations"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-30 14:02:32.815978",
+ "modified": "2025-07-02 11:45:28.190079",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Trainer",

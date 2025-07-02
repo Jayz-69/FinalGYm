@@ -1,0 +1,492 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.802184",
+  "name": "bko96sftom",
+  "parent": "permission-manager",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:13.266849",
+  "name": "bsc8152eqf",
+  "parent": "ToDo",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:13.237991",
+  "name": "bscgksh9la",
+  "parent": "setup-wizard",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.925469",
+  "name": "bkpjr6u6hc",
+  "parent": "Permitted Documents For User",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:19.440715",
+  "name": "buatcri0ku",
+  "parent": "print-format-builder",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.866900",
+  "name": "bkoe02i2b4",
+  "parent": "Document Share Report",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:13.187686",
+  "name": "bsb4louqe1",
+  "parent": "backups",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:21.422698",
+  "name": "buuj4456ug",
+  "parent": "Addresses And Contacts",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Sales User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.908911",
+  "name": "bkpco4fokn",
+  "parent": "Transaction Log Report",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Administrator"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:13.160765",
+  "name": "bsbbt4dvm9",
+  "parent": "user-profile",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "All"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:56.362757",
+  "name": "bn3gpvn3ua",
+  "parent": "Website Analytics",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:19.473411",
+  "name": "bua8srl7hf",
+  "parent": "print-format-builder-beta",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.933834",
+  "name": "bkpfqblbrn",
+  "parent": "Database Storage Usage By Tables",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:05.199920",
+  "name": "bps7l1mq5i",
+  "parent": "Audit System Hooks",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:59.153585",
+  "name": "bnv8jum1o5",
+  "parent": "workflow-builder",
+  "parentfield": "roles",
+  "parenttype": "Page",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.942163",
+  "name": "bkp1nkupkb",
+  "parent": "Prepared Report Analytics",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qlbq6fje",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Translator"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:26.939002",
+  "name": "c0lnp0d9k5",
+  "parent": "Guest",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Guest"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 14:45:20.813529",
+  "name": "1solq4f0fj",
+  "parent": "jayanjarlekar@gmail.com",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Gym Member"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:21.422698",
+  "name": "buua8b8fue",
+  "parent": "Addresses And Contacts",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Purchase User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:48.908911",
+  "name": "bkphcc1a5d",
+  "parent": "Transaction Log Report",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:32:56.362757",
+  "name": "bn30flkevf",
+  "parent": "Website Analytics",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Website Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qh3ahc76",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Sales Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:21.422698",
+  "name": "buuiepsb2r",
+  "parent": "Addresses And Contacts",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Maintenance User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qguoesjc",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Sales Master Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-06-30 13:33:21.422698",
+  "name": "buuv1c3rv6",
+  "parent": "Addresses And Contacts",
+  "parentfield": "roles",
+  "parenttype": "Report",
+  "role": "Accounts User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qgolekkq",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Maintenance User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q72ea801",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Purchase Master Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q1hm1sks",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Purchase Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qs9gl2u5",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Maintenance Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qcit5k32",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Accounts Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qk225nav",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Purchase User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qsgequ3i",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Sales User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qr7uervq",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Accounts User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qqo5dppt",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Newsletter Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qg53kkbf",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Knowledge Base Editor"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qmbj6ie3",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Knowledge Base Contributor"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q1bh6kes",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Blogger"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qnff8hmi",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Inbox User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q3a6549d",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Prepared Report User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qnj5chl7",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Script Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q62eehr6",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Report Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q6nil2r9",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Workspace Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0qscltooi",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Dashboard Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q7cau4kv",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Website Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "c0q98t9qv0",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "System Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "vv8di3cfaa",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Gym Admin"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "vv8r18r33t",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Gym Member"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Has Role",
+  "modified": "2025-07-01 16:31:17.640435",
+  "name": "vv8r9jd5m7",
+  "parent": "Administrator",
+  "parentfield": "roles",
+  "parenttype": "User",
+  "role": "Gym Trainer"
+ }
+]

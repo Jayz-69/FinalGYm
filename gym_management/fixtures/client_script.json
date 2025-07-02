@@ -1,0 +1,46 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Trainer",
+  "enabled": 1,
+  "modified": "2025-06-30 14:19:23.199301",
+  "module": null,
+  "name": "Display Ratings",
+  "script": "frappe.ui.form.on('Gym Trainer', {\n    refresh: function(frm) {\n        if (frm.doc.average_rating) {\n            let stars = '⭐'.repeat(Math.round(frm.doc.average_rating));\n            let html = `<div style=\"font-size: 1.3em; margin-top: 5px;\">${stars}</div>`;\n            frm.fields_dict.average_rating.$wrapper.html(html);\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Member",
+  "enabled": 1,
+  "modified": "2025-06-30 14:32:21.938792",
+  "module": null,
+  "name": "BMI calculation",
+  "script": "function calculate_bmi(frm) {\n    const weight = frm.doc.current_weight;\n    const height = frm.doc.current_height;\n\n    if (weight && height && height > 0) {\n        const height_in_m = height / 100;\n        const bmi = weight / (height_in_m * height_in_m);\n        frm.set_value(\"bmi\", Math.round(bmi * 10) / 10); // Round to 1 decimal\n    }\n}\n\nfrappe.ui.form.on('Gym Member', {\n    current_weight: function(frm) {\n        calculate_bmi(frm);\n    },\n    current_height: function(frm) {\n        calculate_bmi(frm);\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Membership",
+  "enabled": 1,
+  "modified": "2025-06-30 14:52:21.771389",
+  "module": null,
+  "name": "Date Calculation",
+  "script": "frappe.ui.form.on('Gym Membership', {\n    plan_type: function(frm) {\n        calculate_end_date(frm);\n    },\n    start_date: function(frm) {\n        calculate_end_date(frm);\n    }\n});\n\nfunction calculate_end_date(frm) {\n    const start = frm.doc.start_date;\n    const plan = frm.doc.plan_type;\n\n    if (!start || !plan) return;\n\n    let months_to_add = 0;\n\n    if (plan.includes(\"1 Month\")) {\n        months_to_add = 1;\n    } else if (plan.includes(\"3 Months\")) {\n        months_to_add = 3;\n    } else if (plan.includes(\"1 Year\")) {\n        months_to_add = 12;\n    }\n\n    // Convert start_date to JS Date\n    const startDate = new Date(start);\n    const endDate = new Date(startDate.setMonth(startDate.getMonth() + months_to_add));\n\n    // Format date to YYYY-MM-DD\n    const yyyy = endDate.getFullYear();\n    const mm = String(endDate.getMonth() + 1).padStart(2, '0');\n    const dd = String(endDate.getDate()).padStart(2, '0');\n    const formatted = `${yyyy}-${mm}-${dd}`;\n\n    frm.set_value(\"end_date\", formatted);\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Member",
+  "enabled": 1,
+  "modified": "2025-06-30 18:19:25.748765",
+  "module": null,
+  "name": "Final Price",
+  "script": "frappe.ui.form.on('Gym Membership', {\n    locker: function(frm) {\n        if(frm.doc.locker == 'Yes') {\n            frappe.call({\n                method: \"frappe.client.get_single\",\n                args: { doctype: \"Gym Settings\" },\n                callback: function(r) {\n                    if (!r.exc) {\n                        let total_lockers = r.message.total_lockers;\n                        frappe.call({\n                            method: \"gym_management.api.get_locked_membership_count\",\n                            callback: function(res) {\n                                if(res.message >= total_lockers) {\n                                    frappe.msgprint(\"No lockers available right now.\");\n                                    frm.set_value(\"locker\", \"No\");\n                                    frm.refresh_field(\"locker\");\n                                }\n                            }\n                        });\n                    }\n                }\n            });\n        }\n    }\n});\n",
+  "view": "Form"
+ }
+]

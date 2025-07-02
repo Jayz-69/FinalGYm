@@ -245,6 +245,33 @@ app_license = "mit"
 
 doc_events = {
     "Gym Membership": {
-        "after_submit": "gym_management.gym_management.doctype.gym_membership.gym_membership.GymMembership.after_submit"
+        "after_submit": "gym_management.jim.doctype.gym_membership.gym_membership.GymMembership.after_submit"
     }
 }
+
+fixtures = [
+    # Your custom DocTypes
+    {"dt": "DocType", "filters": [["module", "=", "Gym"]]},
+    
+    # Role and permissions
+    "Role",
+    "Has Role",
+    "Custom DocPerm",
+    {"dt": "Custom DocPerm", "filters": [["parent", "in", ["Gym Member", "Gym Trainer", "Gym Membership", "Gym Management", "Metrics Update", "Specializations", "Gym Trainer Specialization", "Gym Trainer Subscription", "Gym Settings"]]]},
+
+    # Client Scripts & Server Scripts
+    "Client Script",
+    "Server Script",
+
+    # Web Forms and Pages
+    "Web Form",
+    "Web Page",
+
+    # Other useful fixtures (optional, based on what you use)
+    "Property Setter",
+    "Custom Field",
+    "Print Format",
+    "Workflow",
+    "Workflow State",
+    "Workflow Action"
+]

@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-02 11:56:01.560716",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "current_weight",
+  "current_height",
+  "daily_calorie_intake",
+  "bmi"
+ ],
+ "fields": [
+  {
+   "fieldname": "current_weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Current Weight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_height",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Current Height",
+   "reqd": 1
+  },
+  {
+   "fieldname": "daily_calorie_intake",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Daily Calorie Intake",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bmi",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "BMI",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-02 12:05:05.805938",
+ "modified_by": "Administrator",
+ "module": "Jim",
+ "name": "Metrics Update",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

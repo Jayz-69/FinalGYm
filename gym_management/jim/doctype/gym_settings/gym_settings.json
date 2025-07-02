@@ -10,25 +10,30 @@
   "default_price_1y",
   "total_lockers",
   "notification_email",
-  "locker_price_1m"
+  "locker_price_1m",
+  "used_lockers"
  ],
  "fields": [
   {
+   "default": "5000",
    "fieldname": "default_price_1m",
    "fieldtype": "Currency",
    "label": "Default Membership Price (1 Month)"
   },
   {
+   "default": "9000",
    "fieldname": "default_price_3m",
    "fieldtype": "Currency",
    "label": "Default Membership Price (3 Months)"
   },
   {
+   "default": "14000",
    "fieldname": "default_price_1y",
    "fieldtype": "Currency",
    "label": "Default Membership Price (1 Year)"
   },
   {
+   "default": "30",
    "fieldname": "total_lockers",
    "fieldtype": "Int",
    "label": "Total Lockers"
@@ -39,16 +44,23 @@
    "label": "Notification Email"
   },
   {
+   "default": "1500",
    "fieldname": "locker_price_1m",
    "fieldtype": "Float",
    "label": "Locker Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "used_lockers",
+   "fieldtype": "Int",
+   "label": "Used Lockers"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-06-30 17:50:15.592917",
+ "modified": "2025-07-02 15:17:32.790848",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Settings",
