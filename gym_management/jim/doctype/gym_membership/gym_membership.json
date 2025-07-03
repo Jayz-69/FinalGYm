@@ -8,6 +8,11 @@
  "field_order": [
   "section_break_p5yw",
   "member",
+  "full_name",
+  "contact_number",
+  "dob",
+  "gender",
+  "address",
   "plan_type",
   "start_date",
   "end_date",
@@ -25,7 +30,7 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "label": "Member",
-   "options": "Gym Member",
+   "options": "User",
    "unique": 1
   },
   {
@@ -67,12 +72,39 @@
    "fieldtype": "Data",
    "label": "Locker Description",
    "read_only": 1
+  },
+  {
+   "fetch_from": "member.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-02 15:06:47.597948",
+ "modified": "2025-07-03 10:31:02.808567",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Membership",

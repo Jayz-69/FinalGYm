@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-07-02 15:22:54.249629",
+ "modified": "2025-07-02 18:05:57.275422",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "gym-membership-form",
@@ -123,6 +123,20 @@
    "max_value": 0,
    "precision": "",
    "read_only": 1,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "class_booking",
+   "fieldtype": "Table",
+   "hidden": 0,
+   "label": "Class Booking",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Gym Class Booking",
+   "precision": "",
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   }
