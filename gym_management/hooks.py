@@ -288,6 +288,9 @@ fixtures = [
     {
         "doctype": "Web Template",
         "filters": [["module", "=", "Jim"]]
+    },
+    {
+        "doctype": "Website Settings"
     }
 ]
 
