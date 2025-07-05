@@ -260,45 +260,34 @@ doc_events = {
 
 fixtures = [
     {
-        "dt": "Custom Field"
+        "doctype": "DocType",
+        "filters": [["name", "in", [
+            "Gym Membership",
+            "Gym Settings",
+            "Gym Trainer Subscription",
+            "Gym Trainer",
+            "Specializations",
+            "Gym Management",
+            "Metrics Update"
+        ]]]
+    },
+    "Custom Field",
+    "Client Script",
+    "Server Script",
+    "Property Setter",
+    "Workflow",
+    "Print Format",
+    "Report",
+    "Custom DocPerm",
+    "Role",
+    "Web Form",
+    {
+        "doctype": "Web Page",
+        "filters": [["module", "=", "Jim"]]
     },
     {
-        "dt": "Property Setter"
-    },
-    {
-        "dt": "Client Script"
-    },
-    {
-        "dt": "Server Script"
-    },
-    {
-        "dt": "Report",
-        "filters": {
-            "module": ["=", "Jim"]
-        }
-    },
-    {
-        "dt": "Web Page",
-        "filters": {
-            "module": ["=", "Jim"]
-        }
-    },
-    {
-        "dt": "Web Form",
-        "filters": {
-            "module": ["=", "Jim"]
-        }
-    },
-    {
-        "dt": "Role"
-    },
-    {
-        "dt": "Custom DocPerm"
-    },
-    {
-        "dt": "Workspace",
-        "filters": {
-            "module": ["=", "Jim"]
-        }
+        "doctype": "Web Template",
+        "filters": [["module", "=", "Jim"]]
     }
 ]
+
