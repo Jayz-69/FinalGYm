@@ -1,1 +1,18 @@
-[]
+[
+ {
+  "default_value": null,
+  "doc_type": "Gym Trainer",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "field_name": null,
+  "is_system_generated": 0,
+  "modified": "2025-07-04 11:10:55.210853",
+  "module": null,
+  "name": "Gym Trainer-main-field_order",
+  "property": "field_order",
+  "property_type": "Data",
+  "row_name": null,
+  "value": "[\"full_name\", \"trainer_specialization\", \"phone\", \"email\"]"
+ }
+]

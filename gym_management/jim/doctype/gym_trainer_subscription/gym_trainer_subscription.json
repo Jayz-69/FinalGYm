@@ -6,8 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_krub",
-  "amended_from",
   "member",
+  "specialization",
   "trainer",
   "rating",
   "subscription_date",
@@ -19,16 +19,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Trainer Subscription",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "rating",
    "fieldtype": "Rating",
    "label": "Rating"
@@ -37,7 +27,7 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "label": "Member",
-   "options": "Gym Member"
+   "options": "User"
   },
   {
    "fieldname": "trainer",
@@ -55,12 +45,18 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "specialization",
+   "fieldtype": "Link",
+   "label": "Specialization",
+   "options": "Specializations"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-01 18:25:25.390458",
+ "modified": "2025-07-03 13:38:29.389239",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Trainer Subscription",

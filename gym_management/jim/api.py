@@ -1,14 +1,11 @@
-# apps/gym_management/gym_management/jim/api.py
-
-# apps/gym_management/gym_management/jim/api.py
+# gym_management/gym_management/jim/api.py
 
 import frappe
+import json
 
 @frappe.whitelist()
 def update_total_lockers(lockers_used):
-    """Reduces the total lockers in Gym Settings by lockers_used amount"""
     lockers_used = int(lockers_used)
-
     settings = frappe.get_single("Gym Settings")
     total_lockers = settings.total_lockers or 0
 
@@ -26,3 +23,38 @@ def update_total_lockers(lockers_used):
         "remaining": settings.total_lockers
     }
 
+@frappe.whitelist()
+def get_filtered_trainers(doctype, txt, searchfield, start, page_len, filters=None):
+    if filters and isinstance(filters, str):
+        filters = json.loads(filters)
+    elif not filters:
+        filters = {}
+
+    specialization = filters.get("specialization")
+    conditions = []
+    values = []
+
+    if specialization:
+        conditions.append("trainer_specialization = %s")
+        values.append(specialization)
+
+    start = int(start)
+    page_len = int(page_len)
+
+    query = f"""
+        SELECT name, full_name FROM `tabGym Trainer`
+        WHERE {searchfield} LIKE %s
+    """
+
+    values = [f"%{txt}%"] + values
+
+    if conditions:
+        query += " AND " + " AND ".join(conditions)
+
+    query += " LIMIT %s OFFSET %s"
+    values += [page_len, start]
+
+    results = frappe.db.sql(query, values, as_dict=True)
+
+    # Format dropdown options
+    return [{"value": r["name"], "label": r["full_name"]} for r in results]

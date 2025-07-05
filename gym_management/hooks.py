@@ -242,6 +242,15 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+after_login = "gym_management.utils.redirect_after_login"
+
+# permission_query_conditions = {
+#     "Gym Membership": "gym_management.jim.doctype.gym_membership.gym_membership.get_permission_query_conditions"
+# }
+
+# has_permission = {
+#     "Gym Membership": "gym_management.jim.doctype.gym_membership.gym_membership.has_permission"
+# }
 
 doc_events = {
     "Gym Membership": {
@@ -250,28 +259,46 @@ doc_events = {
 }
 
 fixtures = [
-    # Your custom DocTypes
-    {"dt": "DocType", "filters": [["module", "=", "Gym"]]},
-    
-    # Role and permissions
-    "Role",
-    "Has Role",
-    "Custom DocPerm",
-    {"dt": "Custom DocPerm", "filters": [["parent", "in", ["Gym Member", "Gym Trainer", "Gym Membership", "Gym Management", "Metrics Update", "Specializations", "Gym Trainer Specialization", "Gym Trainer Subscription", "Gym Settings"]]]},
-
-    # Client Scripts & Server Scripts
-    "Client Script",
-    "Server Script",
-
-    # Web Forms and Pages
-    "Web Form",
-    "Web Page",
-
-    # Other useful fixtures (optional, based on what you use)
-    "Property Setter",
-    "Custom Field",
-    "Print Format",
-    "Workflow",
-    "Workflow State",
-    "Workflow Action"
+    {
+        "dt": "Custom Field"
+    },
+    {
+        "dt": "Property Setter"
+    },
+    {
+        "dt": "Client Script"
+    },
+    {
+        "dt": "Server Script"
+    },
+    {
+        "dt": "Report",
+        "filters": {
+            "module": ["=", "Jim"]
+        }
+    },
+    {
+        "dt": "Web Page",
+        "filters": {
+            "module": ["=", "Jim"]
+        }
+    },
+    {
+        "dt": "Web Form",
+        "filters": {
+            "module": ["=", "Jim"]
+        }
+    },
+    {
+        "dt": "Role"
+    },
+    {
+        "dt": "Custom DocPerm"
+    },
+    {
+        "dt": "Workspace",
+        "filters": {
+            "module": ["=", "Jim"]
+        }
+    }
 ]

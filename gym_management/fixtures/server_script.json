@@ -9,13 +9,13 @@
   "doctype_event": "After Insert",
   "enable_rate_limit": 0,
   "event_frequency": "All",
-  "modified": "2025-07-01 15:45:07.678206",
+  "modified": "2025-07-03 18:06:18.953754",
   "module": null,
   "name": "Create System User",
   "rate_limit_count": 5,
   "rate_limit_seconds": 86400,
   "reference_doctype": "Gym Management",
-  "script": "if not frappe.db.exists(\"User\", doc.email):\n    try:\n        user = frappe.get_doc({\n            \"doctype\": \"User\",\n            \"email\": doc.email,\n            \"first_name\": doc.full_name,\n            \"enabled\": 1,\n            \"roles\": [{\"role\": doc.role_type}]\n        })\n        user.insert(ignore_permissions=True)\n\n        if doc.get(\"password\"):\n            user.set_password(doc.password)\n\n        # Remove this to avoid error in web form submission\n        # frappe.msgprint(f\"User {doc.email} created with role {doc.role_type}.\")\n    except Exception as e:\n        # You can log error instead of msgprint\n        frappe.log_error(f\"Error creating user: {str(e)}\", \"Gym Management User Creation\")\nelse:\n    # Remove this as well\n    # frappe.msgprint(f\"User with email {doc.email} already exists.\")\n    pass\n",
+  "script": "if not frappe.db.exists(\"User\", doc.email):\n    try:\n        user = frappe.get_doc({\n            \"doctype\": \"User\",\n            \"email\": doc.email,\n            \"first_name\": doc.full_name,\n            \"enabled\": 1,\n            \"roles\": [{\"role\": doc.role_type}]\n        })\n        user.insert(ignore_permissions=True)\n\n        if doc.get(\"password\"):\n            user.set_password(doc.password)\n\n        # Optional: Show a message\n        # frappe.msgprint(f\"User {doc.email} created with role {doc.role_type}.\")\n\n    except Exception as e:\n        frappe.log_error(f\"Error creating user: {str(e)}\", \"Gym Management User Creation\")\nelse:\n    # User already exists — do nothing\n    pass\n",
   "script_type": "DocType Event"
  }
 ]

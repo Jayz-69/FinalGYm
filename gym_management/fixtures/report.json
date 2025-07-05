@@ -1,0 +1,141 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-07-04 15:30:14.605779",
+  "module": "Jim",
+  "name": "Most Popular Group Classes",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Gym Membership",
+  "reference_report": null,
+  "report_name": "Most Popular Group Classes",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Most Popular Group Classes",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Most Popular Group Classes",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Gym Admin"
+   },
+   {
+    "parent": "Most Popular Group Classes",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Gym Member"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "member",
+    "fieldtype": "Link",
+    "label": "Member",
+    "mandatory": 0,
+    "options": "User",
+    "parent": "Fitness Journey Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-07-05 12:07:12.101939",
+  "module": "Jim",
+  "name": "Fitness Journey Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Gym Membership",
+  "reference_report": null,
+  "report_name": "Fitness Journey Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Fitness Journey Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Gym Member"
+   },
+   {
+    "parent": "Fitness Journey Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Gym Admin"
+   },
+   {
+    "parent": "Fitness Journey Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-07-05 16:10:27.154904",
+  "module": "Jim",
+  "name": "Monthly Revenue Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Gym Membership",
+  "reference_report": null,
+  "report_name": "Monthly Revenue Report",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Monthly Revenue Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Gym Admin"
+   },
+   {
+    "parent": "Monthly Revenue Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   }
+  ],
+  "timeout": 0
+ }
+]

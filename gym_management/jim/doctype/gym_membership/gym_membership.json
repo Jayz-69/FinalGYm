@@ -19,7 +19,11 @@
   "status",
   "locker",
   "final_price",
-  "locker_description"
+  "locker_description",
+  "specialization",
+  "trainer",
+  "rating_for_trainer",
+  "metrics_update"
  ],
  "fields": [
   {
@@ -99,12 +103,34 @@
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "specialization",
+   "fieldtype": "Link",
+   "label": "Specialization",
+   "options": "Specializations"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Select",
+   "label": "Trainer"
+  },
+  {
+   "fieldname": "rating_for_trainer",
+   "fieldtype": "Rating",
+   "label": "Rating for Trainer"
+  },
+  {
+   "fieldname": "metrics_update",
+   "fieldtype": "Table",
+   "label": "Metrics Update",
+   "options": "Metrics Update"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-03 10:31:02.808567",
+ "modified": "2025-07-05 10:42:00.174407",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Membership",

@@ -70,3 +70,11 @@ class GymMembership(Document):
             self.locker_description = "Assigned Lockers: " + ", ".join(locks)
         else:
             self.locker_description = ""
+# def get_permission_query_conditions(user):
+#     if not user or user == "Administrator":
+#         return ""
+
+#     return f"`tabGym Membership`.`member` = '{user}'"
+
+# def has_permission(doc, user):
+#     return doc.member == user or user == "Administrator"
