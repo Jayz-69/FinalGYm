@@ -259,18 +259,6 @@ doc_events = {
 }
 
 fixtures = [
-    {
-        "doctype": "DocType",
-        "filters": [["name", "in", [
-            "Gym Membership",
-            "Gym Settings",
-            "Gym Trainer Subscription",
-            "Gym Trainer",
-            "Specializations",
-            "Gym Management",
-            "Metrics Update"
-        ]]]
-    },
     "Custom Field",
     "Client Script",
     "Server Script",
@@ -282,6 +270,34 @@ fixtures = [
     "Role",
     "Web Form",
     {
+        "doctype": "Gym Membership",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Settings",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Trainer Subscription",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Trainer",
+        "filters": []
+    },
+    {
+        "doctype": "Specializations",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Management",
+        "filters": []
+    },
+    {
+        "doctype": "Metrics Update",
+        "filters": []
+    },
+    {
         "doctype": "Web Page",
         "filters": [["module", "=", "Jim"]]
     },
@@ -290,7 +306,9 @@ fixtures = [
         "filters": [["module", "=", "Jim"]]
     },
     {
-        "doctype": "Website Settings"
+        "doctype": "Website Settings",
+        "filters": []
     }
 ]
+
 
