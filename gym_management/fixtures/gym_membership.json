@@ -19,25 +19,6 @@
   "start_date": "2025-01-01"
  },
  {
-  "address": "swdfghjukl",
-  "amended_from": null,
-  "book_locker": 1,
-  "contact_number": "1234567890",
-  "dob": "2019-12-29",
-  "docstatus": 0,
-  "doctype": "Gym Membership",
-  "email_id": "kunal@gmail.com",
-  "end_date": "2025-02-03",
-  "final_price": 1500.0,
-  "gender": "Male",
-  "locker": "L04",
-  "modified": "2025-07-10 15:15:34.399718",
-  "name": "kunal@gmail.com",
-  "name1": "kunal",
-  "plan_type": "3 Months  >> (₹9000)",
-  "start_date": "2024-11-05"
- },
- {
   "address": "qsfdghjkl",
   "amended_from": null,
   "book_locker": 0,
