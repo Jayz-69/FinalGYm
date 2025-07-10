@@ -1,0 +1,38 @@
+[
+ {
+  "class_boooking": "Gym/Strength Training",
+  "docstatus": 0,
+  "doctype": "Gym Class Booking",
+  "email": "anupam@gmail.com",
+  "modified": "2025-07-09 19:13:17.733004",
+  "name": "anupam@gmail.com",
+  "trainer_name": "Jay"
+ },
+ {
+  "class_boooking": "MMA(Mixed Martial Arts)",
+  "docstatus": 0,
+  "doctype": "Gym Class Booking",
+  "email": "rucha@gmail.com",
+  "modified": "2025-07-09 19:16:06.877717",
+  "name": "rucha@gmail.com",
+  "trainer_name": "new1"
+ },
+ {
+  "class_boooking": "Kickboxing",
+  "docstatus": 0,
+  "doctype": "Gym Class Booking",
+  "email": "spandan@gmail.com",
+  "modified": "2025-07-09 19:40:02.068569",
+  "name": "spandan@gmail.com",
+  "trainer_name": "Rakesh"
+ },
+ {
+  "class_boooking": "Powerlifting",
+  "docstatus": 0,
+  "doctype": "Gym Class Booking",
+  "email": "akash@gmail.com",
+  "modified": "2025-07-10 09:45:26.730095",
+  "name": "akash@gmail.com",
+  "trainer_name": "Prajwal"
+ }
+]

@@ -1,0 +1,20 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Trainer Ratings",
+  "email": "anupam@gmail.com",
+  "modified": "2025-07-09 18:15:34.197253",
+  "name": "anupam@gmail.com",
+  "trainer_name": "Jay",
+  "trainer_rating": 0.7
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Trainer Ratings",
+  "email": "rucha@gmail.com",
+  "modified": "2025-07-09 19:16:19.877263",
+  "name": "rucha@gmail.com",
+  "trainer_name": "new1",
+  "trainer_rating": 0.8
+ }
+]

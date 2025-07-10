@@ -2,23 +2,12 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
-  "dt": "Gym Trainer",
+  "dt": "TrainerReg",
   "enabled": 1,
   "modified": "2025-06-30 14:19:23.199301",
   "module": null,
   "name": "Display Ratings",
   "script": "frappe.ui.form.on('Gym Trainer', {\n    refresh: function(frm) {\n        if (frm.doc.average_rating) {\n            let stars = '⭐'.repeat(Math.round(frm.doc.average_rating));\n            let html = `<div style=\"font-size: 1.3em; margin-top: 5px;\">${stars}</div>`;\n            frm.fields_dict.average_rating.$wrapper.html(html);\n        }\n    }\n});\n",
-  "view": "Form"
- },
- {
-  "docstatus": 0,
-  "doctype": "Client Script",
-  "dt": "Gym Member",
-  "enabled": 1,
-  "modified": "2025-06-30 14:32:21.938792",
-  "module": null,
-  "name": "BMI calculation",
-  "script": "function calculate_bmi(frm) {\n    const weight = frm.doc.current_weight;\n    const height = frm.doc.current_height;\n\n    if (weight && height && height > 0) {\n        const height_in_m = height / 100;\n        const bmi = weight / (height_in_m * height_in_m);\n        frm.set_value(\"bmi\", Math.round(bmi * 10) / 10); // Round to 1 decimal\n    }\n}\n\nfrappe.ui.form.on('Gym Member', {\n    current_weight: function(frm) {\n        calculate_bmi(frm);\n    },\n    current_height: function(frm) {\n        calculate_bmi(frm);\n    }\n});\n",
   "view": "Form"
  },
  {
@@ -36,11 +25,66 @@
   "docstatus": 0,
   "doctype": "Client Script",
   "dt": "Gym Member",
-  "enabled": 1,
-  "modified": "2025-06-30 18:19:25.748765",
+  "enabled": 0,
+  "modified": "2025-07-08 12:43:59.758993",
   "module": null,
   "name": "Final Price",
   "script": "frappe.ui.form.on('Gym Membership', {\n    locker: function(frm) {\n        if(frm.doc.locker == 'Yes') {\n            frappe.call({\n                method: \"frappe.client.get_single\",\n                args: { doctype: \"Gym Settings\" },\n                callback: function(r) {\n                    if (!r.exc) {\n                        let total_lockers = r.message.total_lockers;\n                        frappe.call({\n                            method: \"gym_management.api.get_locked_membership_count\",\n                            callback: function(res) {\n                                if(res.message >= total_lockers) {\n                                    frappe.msgprint(\"No lockers available right now.\");\n                                    frm.set_value(\"locker\", \"No\");\n                                    frm.refresh_field(\"locker\");\n                                }\n                            }\n                        });\n                    }\n                }\n            });\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "BMI",
+  "enabled": 1,
+  "modified": "2025-07-08 10:58:56.390188",
+  "module": "Jim",
+  "name": "BMI calculation01",
+  "script": "frappe.ui.form.on('Metrics Update', {\n    current_weight: function(frm, cdt, cdn) {\n        calculate_bmi(frm, cdt, cdn);\n    },\n    current_height: function(frm, cdt, cdn) {\n        calculate_bmi(frm, cdt, cdn);\n    }\n});\n\nfunction calculate_bmi(frm, cdt, cdn) {\n    let row = locals[cdt][cdn];\n\n    if (row.current_weight && row.current_height && row.current_height > 0) {\n        const height_in_m = row.current_height / 100;\n        const bmi = row.current_weight / (height_in_m * height_in_m);\n        row.bmi = Math.round(bmi * 10) / 10;\n\n        frm.refresh_field('metrics_update');  // Replace this with your actual child table fieldname in BMI Doctype\n    }\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Membership",
+  "enabled": 1,
+  "modified": "2025-07-08 13:52:26.048579",
+  "module": "Jim",
+  "name": "Locker Booking",
+  "script": "frappe.ui.form.on('Gym Membership', {\n    book_locker: function (frm) {\n        // Show/hide the locker field based on the checkbox\n        frm.toggle_display('locker', frm.doc.book_locker === 1);\n\n        // Clear locker value if checkbox is unchecked\n        if (!frm.doc.book_locker) {\n            frm.set_value('locker', '');\n        }\n    },\n\n    onload: async function (frm) {\n        // Always ensure locker visibility is in sync\n        frm.toggle_display('locker', frm.doc.book_locker === 1);\n\n        // Fetch lockers that are already booked\n        const used_lockers = await frappe.db.get_list('Gym Membership', {\n            fields: ['locker'],\n            filters: {\n                docstatus: ['<', 2],\n                locker: ['!=', null]\n            },\n            pluck: 'locker'\n        });\n\n        // Set dynamic filter to exclude already-booked lockers\n        frm.set_query('locker', () => {\n            return {\n                filters: [\n                    ['Available Lockers', 'name', 'not in', used_lockers]\n                ]\n            };\n        });\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Class Booking",
+  "enabled": 1,
+  "modified": "2025-07-08 18:39:40.655750",
+  "module": "Jim",
+  "name": "Class Booking",
+  "script": "frappe.ui.form.on('Gym Class Booking', {\n    class_booking(frm) {\n        if (frm.doc.class_booking) {\n            frm.set_query('trainer_name', () => {\n                return {\n                    filters: {\n                        trainer_specialization: frm.doc.class_booking\n                    }\n                };\n            });\n        } else {\n            frm.set_query('trainer_name', () => {\n                return {};\n            });\n        }\n    },\n\n    onload(frm) {\n        if (frm.doc.class_booking) {\n            frm.set_query('trainer_name', () => {\n                return {\n                    filters: {\n                        trainer_specialization: frm.doc.class_booking\n                    }\n                };\n            });\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Workout Plan",
+  "enabled": 1,
+  "modified": "2025-07-08 19:10:10.864112",
+  "module": "Jim",
+  "name": "Plan Details",
+  "script": "frappe.ui.form.on('Gym Workout Plan', {\n    select_workout_plan: function (frm) {\n        const plans = {\n            \"Beginner\": `Monday - Wall Push-ups, Incline Push-ups, Shoulder Press, Bicep Curls, Arm Circles\nTuesday - Bodyweight Squats, Glute Bridges, Calf Raises, Seated Leg Raises, Bird-Dog\nWednesday - 20-min walk, Cat-Cow, Child’s Pose, Stretching\nThursday - March in Place, Chair Squats, Wall Push-ups, Knee Raises, Side Leg Lifts\nFriday - Chest Press, Dumbbell Rows, Overhead Press, Reverse Flies\nSaturday - Step-ups, Glute Bridges, Jump Squats, Plank (knees)\nSunday - 20-min Yoga, Full-body stretching`,\n\n            \"Intermediate\": `Monday - Push-ups, Dumbbell Shoulder Press, Rows, Band Pull-aparts, Plank\nTuesday - Goblet Squats, RDLs, Walking Lunges, Russian Twists, Leg Lifts\nWednesday - 30-min walk/cycle, Foam Rolling, Yoga Flow\nThursday - Jacks, Push-ups, Squats, Mountain Climbers (3 rounds)\nFriday - Incline Push-ups, Chest Press, Overhead Press, Rows, Triceps Dips\nSaturday - Jump Squats, Deadlifts, Step-ups, High Knees, Calf Raises\nSunday - 30-min Yoga, Breathwork, Hip/Spine Stretching`,\n\n            \"Advanced\": `Monday - Bench Press, Pull-ups, Arnold Press, Rows, Hanging Leg Raises\nTuesday - Back Squats, RDLs, Walking Lunges, Weighted Sit-ups, Cable Twists\nWednesday - Jog/Swim, Foam Rolling, Pigeon/Cobra Yoga\nThursday - Burpees, Thrusters, Jump Lunges, Push-ups, Plank-to-Push-up (4 rounds)\nFriday - Incline Bench, Pull-ups, Overhead Press, Rows, Curls + Skullcrushers\nSaturday - Front Squats, Box Jumps, Bulgarian Splits, Deadlifts, Sprints\nSunday - Power Yoga, Deep Stretching, Meditation`\n        };\n\n        frm.set_value('plan_preview', plans[frm.doc.select_workout_plan] || \"\");\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 0,
+  "modified": "2025-07-09 14:15:23.610051",
+  "module": "Jim",
+  "name": "Custom Login",
+  "script": "frappe.ready(() => {\n    // 🧹 Clear last_visited to avoid redirecting to /app\n    localStorage.removeItem(\"last_visited\");\n\n    // 🚀 After login redirect for Gym Members\n    if (window.location.pathname === \"/login\") {\n        frappe.call(\"frappe.client.get\", {\n            doctype: \"User\",\n            name: frappe.session.user\n        }).then(r => {\n            const user = r.message;\n            const roles = (user.roles || []).map(role => role.role);\n\n            // ✅ Redirect based on role\n            if (roles.includes(\"Gym Member\")) {\n                window.location.href = \"/my-gym-profile\";\n            }\n\n            // 🔁 Optional: Gym Trainer redirect\n            // else if (roles.includes(\"Gym Trainer\")) {\n            //     window.location.href = \"/trainer-dashboard\";\n            // }\n\n        }).catch(err => {\n            console.warn(\"User not logged in or no session.\");\n        });\n    }\n});\n",
   "view": "Form"
  }
 ]

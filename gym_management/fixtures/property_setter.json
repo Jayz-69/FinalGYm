@@ -1,7 +1,7 @@
 [
  {
   "default_value": null,
-  "doc_type": "Gym Trainer",
+  "doc_type": "TrainerReg",
   "docstatus": 0,
   "doctype": "Property Setter",
   "doctype_or_field": "DocType",

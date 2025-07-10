@@ -1,0 +1,92 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "kunal@gmail.com",
+  "modified": "2025-07-09 18:54:47.807160",
+  "name": "kunal@gmail.com",
+  "name1": "kunal",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "spandan@gmail.com",
+  "modified": "2025-07-09 18:55:03.743364",
+  "name": "spandan@gmail.com",
+  "name1": "spandan",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "akash@gmail.com",
+  "modified": "2025-07-09 18:55:19.663806",
+  "name": "akash@gmail.com",
+  "name1": "akash",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "omkar@gmail.com",
+  "modified": "2025-07-09 18:55:38.719573",
+  "name": "omkar@gmail.com",
+  "name1": "omkar",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "omkarshinde@gmail.com",
+  "modified": "2025-07-09 18:56:02.080224",
+  "name": "omkarshinde@gmail.com",
+  "name1": "omkar shinde",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "neha@gmail.com",
+  "modified": "2025-07-09 18:54:13.488797",
+  "name": "neha@gmail.com",
+  "name1": "neha",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "pradeep@gmail.com",
+  "modified": "2025-07-09 18:54:33.519737",
+  "name": "pradeep@gmail.com",
+  "name1": "pradeep",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "rucha@gmail.com",
+  "modified": "2025-07-09 18:56:24.416058",
+  "name": "rucha@gmail.com",
+  "name1": "rucha",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "test@gmail.com",
+  "modified": "2025-07-10 09:23:46.471699",
+  "name": "test@gmail.com",
+  "name1": "test",
+  "password": "redhat",
+  "role": "User"
+ }
+]
