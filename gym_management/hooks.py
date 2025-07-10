@@ -244,6 +244,11 @@ app_license = "mit"
 
 after_login = "gym_management.utils.redirect_after_login"
 
+# website_include_js = [
+#     "public/js/login_redirect.js"
+# ]
+
+
 # permission_query_conditions = {
 #     "Gym Membership": "gym_management.jim.doctype.gym_membership.gym_membership.get_permission_query_conditions"
 # }
@@ -257,6 +262,12 @@ doc_events = {
         "after_submit": "gym_management.jim.doctype.gym_membership.gym_membership.GymMembership.after_submit"
     }
 }
+
+website_route_rules = [
+{"from_route": "/member-details", "to_route": "member_details"}
+]
+
+import gym_management.jim.api
 
 fixtures = [
     "Custom Field",

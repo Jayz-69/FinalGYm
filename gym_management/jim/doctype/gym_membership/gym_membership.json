@@ -1,136 +1,143 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:member",
+ "autoname": "field:email_id",
  "creation": "2025-06-30 14:37:41.944587",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_p5yw",
-  "member",
-  "full_name",
+  "amended_from",
+  "email_id",
+  "name1",
   "contact_number",
-  "dob",
+  "column_break_uvcf",
   "gender",
+  "dob",
   "address",
+  "member_subscription_section",
   "plan_type",
   "start_date",
   "end_date",
-  "status",
-  "locker",
   "final_price",
-  "locker_description",
-  "specialization",
-  "trainer",
-  "rating_for_trainer",
-  "metrics_update"
+  "column_break_cnxy",
+  "book_locker",
+  "locker"
  ],
  "fields": [
   {
    "fieldname": "section_break_p5yw",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "member",
-   "fieldtype": "Link",
-   "label": "Member",
-   "options": "User",
-   "unique": 1
+   "fieldtype": "Section Break",
+   "label": "Personal Information"
   },
   {
    "fieldname": "plan_type",
    "fieldtype": "Select",
    "label": "Plan Type",
-   "options": "1 Month >> (\u20b95000)\n3 Months  >> (\u20b99000)\n1 Year >> (\u20b914000)"
+   "options": "1 Month >> (\u20b95000)\n3 Months  >> (\u20b99000)\n1 Year >> (\u20b914000)",
+   "reqd": 1
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start Date"
+   "label": "Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nExpired\nCancelled"
+   "label": "End Date",
+   "read_only": 1
   },
   {
    "fieldname": "locker",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
+   "hidden": 1,
    "label": "Locker",
-   "options": "0\n1\n2"
-  },
-  {
-   "fieldname": "final_price",
-   "fieldtype": "Float",
-   "label": "Final Price",
-   "read_only": 1
-  },
-  {
-   "fieldname": "locker_description",
-   "fieldtype": "Data",
-   "label": "Locker Description",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "member.full_name",
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "label": "Full Name"
+   "options": "Available Lockers"
   },
   {
    "fieldname": "dob",
    "fieldtype": "Date",
-   "label": "Date of Birth"
+   "in_list_view": 1,
+   "label": "Date of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "contact_number",
    "fieldtype": "Data",
-   "label": "Contact Number"
+   "in_list_view": 1,
+   "label": "Contact Number",
+   "reqd": 1
   },
   {
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale"
+   "options": "Male\nFemale",
+   "reqd": 1
   },
   {
    "fieldname": "address",
    "fieldtype": "Small Text",
-   "label": "Address"
+   "label": "Address",
+   "reqd": 1
   },
   {
-   "fieldname": "specialization",
+   "fieldname": "column_break_uvcf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_subscription_section",
+   "fieldtype": "Section Break",
+   "label": "Member Subscription"
+  },
+  {
+   "fieldname": "column_break_cnxy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
    "fieldtype": "Link",
-   "label": "Specialization",
-   "options": "Specializations"
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   },
   {
-   "fieldname": "trainer",
-   "fieldtype": "Select",
-   "label": "Trainer"
+   "default": "0",
+   "fieldname": "book_locker",
+   "fieldtype": "Check",
+   "label": "Book Locker"
   },
   {
-   "fieldname": "rating_for_trainer",
-   "fieldtype": "Rating",
-   "label": "Rating for Trainer"
+   "fieldname": "final_price",
+   "fieldtype": "Currency",
+   "label": "Final Price",
+   "read_only": 1
   },
   {
-   "fieldname": "metrics_update",
-   "fieldtype": "Table",
-   "label": "Metrics Update",
-   "options": "Metrics Update"
+   "fetch_from": "gym_member.name1",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Link",
+   "label": "Email ID",
+   "options": "Gym Member",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 10:42:00.174407",
+ "modified": "2025-07-10 09:18:56.206471",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Membership",
@@ -147,6 +154,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
@@ -158,6 +166,7 @@
    "report": 1,
    "role": "Gym Admin",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {

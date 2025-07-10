@@ -7,16 +7,16 @@ class GymMembership(Document):
     def validate(self):
         self.calculate_final_price()
         self.calculate_end_date()
-        self.set_locker_description()
+        # self.set_locker_description()
 
-    def on_submit(self):
-        self.update_lockers(allocate=True)
+    # def on_submit(self):
+    #     self.update_lockers(allocate=True)
 
-    def on_cancel(self):
-        self.safe_update_lockers(False)
+    # def on_cancel(self):
+    #     self.safe_update_lockers(False)
 
-    def on_trash(self):
-        self.safe_update_lockers(False)
+    # def on_trash(self):
+    #     self.safe_update_lockers(False)
 
     def safe_update_lockers(self, allocate):
         try:
@@ -43,15 +43,25 @@ class GymMembership(Document):
 
     def calculate_final_price(self):
         settings = frappe.get_single("Gym Settings")
-        mapping = {
-            "1 Month": settings.default_price_1m,
-            "3 Months": settings.default_price_3m,
-            "1 Year": settings.default_price_1y,
+
+        # Plan base prices (correct fieldnames)
+        plan_prices = {
+            "1 Month >> (₹5000)": settings.default_price_1m,
+            "3 Months >> (₹9000)": settings.default_price_3m,
+            "1 Year >> (₹14000)": settings.default_price_1y
         }
-        plan_key = (self.plan_type or "").split(">>")[0].strip()
-        base_price = mapping.get(plan_key, 0)
-        locker_price = int(self.locker or 0) * settings.locker_price_1m
+
+        # Get base price from selected plan
+        base_price = plan_prices.get(self.plan_type, 0)
+
+        # Flat locker charge (₹1500) if locker is booked
+        locker_price = 1500 if self.book_locker else 0
+
+        # Calculate total
         self.final_price = base_price + locker_price
+
+
+
 
     def calculate_end_date(self):
         if self.start_date and self.plan_type:

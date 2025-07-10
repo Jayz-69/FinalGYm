@@ -14,29 +14,37 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Full Name"
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
   },
   {
    "fieldname": "role_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Role Type",
-   "options": "Gym Member\nGym Trainer"
+   "options": "Gym Member\nGym Trainer",
+   "reqd": 1
   },
   {
    "fieldname": "password",
    "fieldtype": "Password",
-   "label": "Password"
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-03 11:39:42.554401",
+ "modified": "2025-07-07 14:04:48.516430",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Management",

@@ -1,58 +1,40 @@
 import frappe
 
 def execute(filters=None):
-    if not filters or not filters.get("member"):
-        frappe.throw("Please select a Member")
+    # Step 1: Get the logged-in user
+    user = frappe.session.user
 
-    member = filters.get("member")
+    # Step 2: Get the email ID from Gym Membership (assuming 'email_id' field maps to frappe user)
+    email = frappe.get_value("Gym Membership", {"email_id": user}, "email_id")
 
-    # 1) Fetch data
+    if not email:
+        frappe.throw("No Gym Membership found for the current user.")
+
+    # Step 3: Fetch metrics from the child table of BMI
     data = frappe.db.sql("""
         SELECT
-            mu.date as date,
-            mu.current_weight,
-            mu.daily_calorie_intake,
-            mu.bmi
-        FROM `tabMetrics Update` mu
-        JOIN `tabGym Membership` gm ON mu.parent = gm.name
-        WHERE gm.member = %s
-        ORDER BY mu.date ASC
-    """, (member,), as_dict=True)
+            m.date,
+            m.current_weight,
+            m.current_height,
+            m.daily_calorie_intake,
+            m.bmi
+        FROM
+            `tabBMI` b
+        JOIN
+            `tabMetrics Update` m ON m.parent = b.name
+        WHERE
+            b.email = %s
+        ORDER BY
+            m.date ASC
+    """, (email,), as_dict=True)
 
-    # 2) Columns
+    # Step 4: Define columns
     columns = [
-        {"label": "Date",            "fieldname": "date",                  "fieldtype": "Date",  "width": 120},
-        {"label": "Weight (kg)",     "fieldname": "current_weight",        "fieldtype": "Float", "width": 120},
-        {"label": "Calories",        "fieldname": "daily_calorie_intake",  "fieldtype": "Float", "width": 120},
-        {"label": "BMI",             "fieldname": "bmi",                   "fieldtype": "Float", "width":  80},
+        {"label": "Date", "fieldname": "date", "fieldtype": "Date", "width": 120},
+        {"label": "Weight (kg)", "fieldname": "current_weight", "fieldtype": "Float", "width": 120},
+        {"label": "Height (cm)", "fieldname": "current_height", "fieldtype": "Float", "width": 120},
+        {"label": "Daily Calories", "fieldname": "daily_calorie_intake", "fieldtype": "Int", "width": 140},
+        {"label": "BMI", "fieldname": "bmi", "fieldtype": "Float", "width": 100},
     ]
 
-    # 3) Message (optional)
-    message = None
-
-    # 4) Chart: Safe float conversion with fallback
-    valid = [r for r in data if r.date]
-    chart = {
-        "data": {
-            "labels": [r.date.strftime("%Y-%m-%d") for r in valid],
-            "datasets": [
-                {
-                    "name": "Weight (kg)",
-                    "values": [float(r.current_weight) if r.current_weight is not None else 0 for r in valid]
-                },
-                {
-                    "name": "Calories",
-                    "values": [float(r.daily_calorie_intake) if r.daily_calorie_intake is not None else 0 for r in valid]
-                },
-                {
-                    "name": "BMI",
-                    "values": [float(r.bmi) if r.bmi is not None else 0 for r in valid]
-                },
-            ]
-        },
-        "type": "line",
-        "colors": ["#f97316", "#10b981", "#3b82f6"],
-        "height": 300
-    }
-
-    return columns, data, message, chart
+    return columns, data
