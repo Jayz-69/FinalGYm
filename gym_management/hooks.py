@@ -270,18 +270,46 @@ website_route_rules = [
 import gym_management.jim.api
 
 fixtures = [
-    "Custom Field",
     "Client Script",
-    "Server Script",
     "Property Setter",
-    "Workflow",
-    "Print Format",
     "Report",
-    "Custom DocPerm",
-    "Role",
     "Web Form",
+
+    # Your custom DocTypes (with all records)
+    {
+        "doctype": "BMI",
+        "filters": []
+    },
     {
         "doctype": "Gym Membership",
+        "filters": []
+    },
+    {
+        "doctype": "Trainer Ratings",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Class Booking",
+        "filters": []
+    },
+    {
+        "doctype": "TrainerReg",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Member",
+        "filters": []
+    },
+    {
+        "doctype": "Gym Workout Plan",
+        "filters": []
+    },
+    {
+        "doctype": "Available Lockers",
+        "filters": []
+    },
+    {
+        "doctype": "Metrics Update",
         "filters": []
     },
     {
@@ -289,25 +317,11 @@ fixtures = [
         "filters": []
     },
     {
-        "doctype": "Gym Trainer Subscription",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Trainer",
-        "filters": []
-    },
-    {
         "doctype": "Specializations",
         "filters": []
     },
-    {
-        "doctype": "Gym Management",
-        "filters": []
-    },
-    {
-        "doctype": "Metrics Update",
-        "filters": []
-    },
+
+    # Website-related assets
     {
         "doctype": "Web Page",
         "filters": [["module", "=", "Jim"]]
@@ -321,5 +335,3 @@ fixtures = [
         "filters": []
     }
 ]
-
-
