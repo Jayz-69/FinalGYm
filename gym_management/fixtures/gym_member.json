@@ -2,16 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Gym Member",
-  "email": "kunal@gmail.com",
-  "modified": "2025-07-09 18:54:47.807160",
-  "name": "kunal@gmail.com",
-  "name1": "kunal",
-  "password": "redhat",
-  "role": "User"
- },
- {
-  "docstatus": 0,
-  "doctype": "Gym Member",
   "email": "spandan@gmail.com",
   "modified": "2025-07-09 18:55:03.743364",
   "name": "spandan@gmail.com",
@@ -66,6 +56,16 @@
   "modified": "2025-07-09 18:54:33.519737",
   "name": "pradeep@gmail.com",
   "name1": "pradeep",
+  "password": "redhat",
+  "role": "User"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Gym Member",
+  "email": "kunal@gmail.com",
+  "modified": "2025-07-09 18:54:47.807160",
+  "name": "kunal@gmail.com",
+  "name1": "kunal",
   "password": "redhat",
   "role": "User"
  },
