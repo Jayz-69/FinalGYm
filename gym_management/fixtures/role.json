@@ -1,0 +1,41 @@
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": "/admin-dashboard",
+  "is_custom": 0,
+  "modified": "2025-07-11 15:11:22.776923",
+  "name": "Gym Admin",
+  "restrict_to_domain": null,
+  "role_name": "Gym Admin",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": "/member-dashboard",
+  "is_custom": 0,
+  "modified": "2025-07-11 16:06:53.951480",
+  "name": "Gym Member",
+  "restrict_to_domain": null,
+  "role_name": "Gym Member",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-07-01 10:08:24.108359",
+  "name": "Gym Trainer",
+  "restrict_to_domain": null,
+  "role_name": "Gym Trainer",
+  "two_factor_auth": 0
+ }
+]

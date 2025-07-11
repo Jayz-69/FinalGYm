@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:M-{###}",
  "creation": "2025-07-09 10:57:37.904524",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -25,10 +26,11 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-07-09 10:58:39.047254",
+ "modified": "2025-07-11 16:31:07.921094",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Workout Plan",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -38,6 +40,18 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Gym Admin",
+   "select": 1,
    "share": 1,
    "write": 1
   }

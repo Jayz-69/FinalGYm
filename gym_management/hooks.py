@@ -269,11 +269,92 @@ website_route_rules = [
 
 import gym_management.jim.api
 
+# fixtures = [
+#     "Client Script",
+#     "Property Setter",
+#     "Report",
+#     "Web Form",
+
+#     # Your custom DocTypes (with all records)
+#     {
+#         "doctype": "BMI",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Gym Membership",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Trainer Ratings",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Gym Class Booking",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "TrainerReg",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Gym Member",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Gym Workout Plan",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Available Lockers",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Metrics Update",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Gym Settings",
+#         "filters": []
+#     },
+#     {
+#         "doctype": "Specializations",
+#         "filters": []
+#     },
+
+#     # Website-related assets
+#     {
+#         "doctype": "Web Page",
+#         "filters": [["module", "=", "Jim"]]
+#     },
+#     {
+#         "doctype": "Web Template",
+#         "filters": [["module", "=", "Jim"]]
+#     },
+#     {
+#         "doctype": "Website Settings",
+#         "filters": []
+#     }
+# ]
+
+
+
+
 fixtures = [
+    # Core Frappe Features
     "Client Script",
     "Property Setter",
     "Report",
     "Web Form",
+
+    # Your custom roles (only selected ones)
+    {
+        "doctype": "Role",
+        "filters": [["name", "in", ["Gym Member", "Gym Trainer", "Gym Admin"]]]
+    },
+    {
+        "doctype": "Custom DocPerm",
+        "filters": [["role", "in", ["Gym Member", "Gym Trainer", "Gym Admin"]]]
+    },
 
     # Your custom DocTypes (with all records)
     {
@@ -335,85 +416,3 @@ fixtures = [
         "filters": []
     }
 ]
-
-
-
-
-# fixtures = [
-#     "Client Script",
-#     "Property Setter",
-#     "Report",
-#     "Web Form",
-
-#     # Your custom DocTypes (with all records)
-#     {
-#         "doctype": "BMI",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Gym Membership",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Trainer Ratings",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Gym Class Booking",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "TrainerReg",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Gym Member",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Gym Workout Plan",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Available Lockers",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Metrics Update",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Gym Settings",
-#         "filters": []
-#     },
-#     {
-#         "doctype": "Specializations",
-#         "filters": []
-#     },
-
-#     # Website-related assets
-#     {
-#         "doctype": "Web Page",
-#         "filters": [
-#             ["module", "=", "Jim"]
-#         ]
-#     },
-#     {
-#         "doctype": "Web Template",
-#         "filters": [
-#             ["module", "=", "Jim"]
-#         ]
-#     },
-#     {
-#         "doctype": "Website Settings",
-#         "filters": []
-#     },
-
-#     # Specific image file used in admin-dashboard
-#     {
-#         "doctype": "File",
-#         "filters": [
-#             ["file_url", "=", "/files/individual-doing-sport-healthy-lifestyle (1).jpg"]
-#         ]
-#     }
-# ]

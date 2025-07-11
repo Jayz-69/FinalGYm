@@ -86,5 +86,38 @@
   "name": "Custom Login",
   "script": "frappe.ready(() => {\n    // 🧹 Clear last_visited to avoid redirecting to /app\n    localStorage.removeItem(\"last_visited\");\n\n    // 🚀 After login redirect for Gym Members\n    if (window.location.pathname === \"/login\") {\n        frappe.call(\"frappe.client.get\", {\n            doctype: \"User\",\n            name: frappe.session.user\n        }).then(r => {\n            const user = r.message;\n            const roles = (user.roles || []).map(role => role.role);\n\n            // ✅ Redirect based on role\n            if (roles.includes(\"Gym Member\")) {\n                window.location.href = \"/my-gym-profile\";\n            }\n\n            // 🔁 Optional: Gym Trainer redirect\n            // else if (roles.includes(\"Gym Trainer\")) {\n            //     window.location.href = \"/trainer-dashboard\";\n            // }\n\n        }).catch(err => {\n            console.warn(\"User not logged in or no session.\");\n        });\n    }\n});\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "BMI",
+  "enabled": 1,
+  "modified": "2025-07-11 17:51:18.145876",
+  "module": "Jim",
+  "name": "Email for BMI",
+  "script": "frappe.web_form.on('after_load', () => {\n  const current_user = frappe.session.user;\n\n  // Fetch email from Gym Membership and set it\n  frappe.call({\n    method: \"frappe.client.get_list\",\n    args: {\n      doctype: \"Gym Membership\",\n      filters: {\n        email_id: current_user\n      },\n      fields: [\"email_id\"],\n      limit: 1\n    },\n    callback: function(res) {\n      if (res.message && res.message.length > 0) {\n        frappe.web_form.set_value('email', res.message[0].email_id);\n      }\n    }\n  });\n\n  // Restrict dropdown to only the current user's email\n  frappe.web_form.set_query('email', () => {\n    return {\n      filters: {\n        name: current_user\n      }\n    };\n  });\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Trainer Ratings",
+  "enabled": 1,
+  "modified": "2025-07-11 17:51:22.577825",
+  "module": "Jim",
+  "name": "Email for trainer ratings",
+  "script": "frappe.web_form.on('after_load', () => {\n  const current_user = frappe.session.user;\n\n  // Fetch email from Gym Membership and set it\n  frappe.call({\n    method: \"frappe.client.get_list\",\n    args: {\n      doctype: \"Gym Membership\",\n      filters: {\n        email_id: current_user\n      },\n      fields: [\"email_id\"],\n      limit: 1\n    },\n    callback: function(res) {\n      if (res.message && res.message.length > 0) {\n        frappe.web_form.set_value('email', res.message[0].email_id);\n      }\n    }\n  });\n\n  // Restrict dropdown to only the current user's email\n  frappe.web_form.set_query('email', () => {\n    return {\n      filters: {\n        name: current_user\n      }\n    };\n  });\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Gym Class Booking",
+  "enabled": 1,
+  "modified": "2025-07-11 17:51:27.746154",
+  "module": "Jim",
+  "name": "Email for Gym Class Booking",
+  "script": "frappe.web_form.on('after_load', () => {\n  const current_user = frappe.session.user;\n\n  // Fetch email from Gym Membership and set it\n  frappe.call({\n    method: \"frappe.client.get_list\",\n    args: {\n      doctype: \"Gym Membership\",\n      filters: {\n        email_id: current_user\n      },\n      fields: [\"email_id\"],\n      limit: 1\n    },\n    callback: function(res) {\n      if (res.message && res.message.length > 0) {\n        frappe.web_form.set_value('email', res.message[0].email_id);\n      }\n    }\n  });\n\n  // Restrict dropdown to only the current user's email\n  frappe.web_form.set_query('email', () => {\n    return {\n      filters: {\n        name: current_user\n      }\n    };\n  });\n});\n",
+  "view": "Form"
  }
 ]

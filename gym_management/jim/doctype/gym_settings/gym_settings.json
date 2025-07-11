@@ -60,7 +60,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-07-03 15:32:24.690894",
+ "modified": "2025-07-11 14:25:39.946981",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Gym Settings",
@@ -73,6 +73,7 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },
@@ -83,6 +84,7 @@
    "print": 1,
    "read": 1,
    "role": "Gym Admin",
+   "select": 1,
    "share": 1,
    "write": 1
   }

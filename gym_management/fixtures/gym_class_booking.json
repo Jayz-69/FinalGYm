@@ -34,5 +34,14 @@
   "modified": "2025-07-10 09:45:26.730095",
   "name": "akash@gmail.com",
   "trainer_name": "Prajwal"
+ },
+ {
+  "class_boooking": "Gym/Strength Training",
+  "docstatus": 0,
+  "doctype": "Gym Class Booking",
+  "email": "jigar@gmail.com",
+  "modified": "2025-07-11 18:41:39.698098",
+  "name": "M-003",
+  "trainer_name": "Jay"
  }
 ]

@@ -104,5 +104,24 @@
     "parenttype": "BMI"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "BMI",
+  "email": "jigar@gmail.com",
+  "modified": "2025-07-11 18:40:48.684061",
+  "name": 5,
+  "table_ctkk": [
+   {
+    "bmi": 24.74,
+    "current_height": 167.0,
+    "current_weight": 69.0,
+    "daily_calorie_intake": 400.0,
+    "date": "2025-07-11",
+    "parent": 5,
+    "parentfield": "table_ctkk",
+    "parenttype": "BMI"
+   }
+  ]
  }
 ]

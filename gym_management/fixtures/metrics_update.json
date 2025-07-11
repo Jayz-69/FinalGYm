@@ -56,6 +56,20 @@
   "parenttype": "BMI"
  },
  {
+  "bmi": 24.74,
+  "current_height": 167.0,
+  "current_weight": 69.0,
+  "daily_calorie_intake": 400.0,
+  "date": "2025-07-11",
+  "docstatus": 0,
+  "doctype": "Metrics Update",
+  "modified": "2025-07-11 18:40:48.684061",
+  "name": "1bn36084dc",
+  "parent": "5",
+  "parentfield": "table_ctkk",
+  "parenttype": "BMI"
+ },
+ {
   "bmi": 26.8,
   "current_height": 158.0,
   "current_weight": 67.0,

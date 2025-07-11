@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{email}",
+ "autoname": "format:M-{###}",
  "creation": "2025-07-08 10:18:35.197821",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -21,7 +21,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fetch_from": "gym_member.trainer_name",
@@ -40,7 +40,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-09 18:15:12.357931",
+ "modified": "2025-07-11 18:02:00.269594",
  "modified_by": "Administrator",
  "module": "Jim",
  "name": "Trainer Ratings",
@@ -56,6 +56,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },
@@ -68,17 +69,21 @@
    "read": 1,
    "report": 1,
    "role": "Gym Admin",
+   "select": 1,
    "share": 1,
    "write": 1
   },
   {
+   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Gym Member",
-   "share": 1
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",
