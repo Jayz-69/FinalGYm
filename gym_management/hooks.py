@@ -356,53 +356,7 @@ fixtures = [
         "filters": [["role", "in", ["Gym Member", "Gym Trainer", "Gym Admin"]]]
     },
 
-    # Your custom DocTypes (with all records)
-    {
-        "doctype": "BMI",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Membership",
-        "filters": []
-    },
-    {
-        "doctype": "Trainer Ratings",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Class Booking",
-        "filters": []
-    },
-    {
-        "doctype": "TrainerReg",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Member",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Workout Plan",
-        "filters": []
-    },
-    {
-        "doctype": "Available Lockers",
-        "filters": []
-    },
-    {
-        "doctype": "Metrics Update",
-        "filters": []
-    },
-    {
-        "doctype": "Gym Settings",
-        "filters": []
-    },
-    {
-        "doctype": "Specializations",
-        "filters": []
-    },
-
-    # Website-related assets
+    # Website-related assets (optional)
     {
         "doctype": "Web Page",
         "filters": [["module", "=", "Jim"]]
